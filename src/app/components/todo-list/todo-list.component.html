@@ -1,0 +1,15 @@
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Creator</th>
+    <th>Creation Date</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let task of tasks">
+    <app-todo [task]="task"></app-todo>
+  </tr>
+  </tbody>
+</table>

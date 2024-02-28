@@ -1,0 +1,17 @@
+<tr [class.completed]="task.completed">
+  <td>
+    <ng-container *ngIf="!editing; else editTaskInput">{{ task.name }}</ng-container>
+    <ng-template #editTaskInput>
+      <input type="text" [(ngModel)]="editedName">
+    </ng-template>
+  </td>
+  <td>{{ task.creator }}</td>
+  <td>{{ task.creationDate | date }}</td>
+  <td>
+    <button (click)="deleteTask()">Delete</button>
+    <button *ngIf="!editing" (click)="editTask()">Edit</button>
+    <button *ngIf="editing" (click)="saveEditedTask()">Save</button>
+    <button *ngIf="editing" (click)="cancelEdit()">Cancel</button>
+    <input type="checkbox" [(ngModel)]="task.completed" (change)="updateTaskCompletion()">
+  </td>
+</tr>
