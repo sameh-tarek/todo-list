@@ -15,10 +15,7 @@ export class TodoComponent {
   constructor(private taskService: TaskService) { }
 
   deleteTask(): void {
-    const index = this.taskService.getTasks().indexOf(this.task);
-    if (index !== -1) {
-      this.taskService.deleteTask(index);
-    }
+    this.taskService.deleteTask(this.task);
   }
 
   editTask(): void {

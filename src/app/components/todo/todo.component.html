@@ -1,17 +1,22 @@
 <tr [class.completed]="task.completed">
-  <td>
+  <td class="col-md-3">
     <ng-container *ngIf="!editing; else editTaskInput">{{ task.name }}</ng-container>
     <ng-template #editTaskInput>
-      <input type="text" [(ngModel)]="editedName">
+      <input type="text" [(ngModel)]="editedName" class="form-control">
     </ng-template>
   </td>
-  <td>{{ task.creator }}</td>
-  <td>{{ task.creationDate | date }}</td>
-  <td>
-    <button (click)="deleteTask()">Delete</button>
-    <button *ngIf="!editing" (click)="editTask()">Edit</button>
-    <button *ngIf="editing" (click)="saveEditedTask()">Save</button>
-    <button *ngIf="editing" (click)="cancelEdit()">Cancel</button>
-    <input type="checkbox" [(ngModel)]="task.completed" (change)="updateTaskCompletion()">
+  <td class="col-md-3">{{ task.creator }}</td>
+  <td class="col-md-3">{{ task.creationDate | date }}</td>
+  <td class="col-md-3">
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-danger" (click)="deleteTask()">Delete</button>
+      <button *ngIf="!editing" type="button" class="btn btn-primary" (click)="editTask()">Edit</button>
+      <button *ngIf="editing" type="button" class="btn btn-success" (click)="saveEditedTask()">Save</button>
+      <button *ngIf="editing" type="button" class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
+    </div>
+    <div class="form-check mt-2">
+      <input class="form-check-input" type="checkbox" [(ngModel)]="task.completed" (change)="updateTaskCompletion()">
+      <label class="form-check-label">Completed</label>
+    </div>
   </td>
 </tr>

@@ -1,2 +1,10 @@
-<input type="text" [(ngModel)]="taskName">
-<button (click)="addTask()">Add Task</button>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-6">
+      <input type="text" [(ngModel)]="taskName" class="form-control" placeholder="Enter task name">
+    </div>
+    <div class="col-md-6">
+      <button (click)="addTask()" class="btn btn-primary">Add Task</button>
+    </div>
+  </div>
+</div>

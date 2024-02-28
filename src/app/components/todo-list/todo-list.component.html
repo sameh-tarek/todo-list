@@ -1,15 +1,24 @@
-<table>
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Creator</th>
-    <th>Creation Date</th>
-    <th>Actions</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let task of tasks">
-    <app-todo [task]="task"></app-todo>
-  </tr>
-  </tbody>
-</table>
+<div class="container mt-4">
+  <!-- Table Section -->
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Creator</th>
+          <th scope="col">Creation Date</th>
+          <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <ng-container *ngFor="let task of tasks">
+          <tr>
+            <app-todo [task]="task"></app-todo>
+          </tr>
+        </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

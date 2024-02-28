@@ -3,4 +3,5 @@ export interface Task {
   creator: string;
   creationDate: Date;
   completed: boolean;
+  deleted: boolean;
 }

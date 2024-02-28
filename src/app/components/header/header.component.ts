@@ -17,7 +17,8 @@ export class HeaderComponent {
         name: this.taskName,
         creator: 'Sameh Tarek',
         creationDate: new Date(),
-        completed: false
+        completed: false,
+        deleted:false
       };
       this.taskService.addTask(task);
       this.taskName = '';
